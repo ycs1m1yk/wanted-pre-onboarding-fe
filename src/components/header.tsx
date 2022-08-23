@@ -10,7 +10,7 @@ const StyledHeader = styled.header`
   display: flex;
   align-items: center;
   flex-wrap: nowrap;
-  height: 10rem;
+  height: 8rem;
   padding: 0 3rem;
   border-bottom: 1px solid ${(props) => props.theme.palette.borderGray};
 
@@ -45,29 +45,6 @@ const StyledLink = styled(Link)`
   white-space: nowrap;
   :hover {
     color: white;
-  }
-`;
-
-const HeaderRight = styled.div`
-  display: flex;
-  align-items: center;
-
-  & > *:not(:first-child) {
-    margin-left: 2rem;
-  }
-`;
-
-const StyledAuth = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  font-weight: 600;
-  font-size: 1.8rem;
-  white-space: nowrap;
-  cursor: pointer;
-  & + & {
-    margin-left: 2rem;
   }
 `;
 

@@ -1,14 +1,16 @@
-import React from 'react';
-import styled from 'styled-components';
+import styled from "styled-components";
+
+import Header from "../components/header";
 
 const StyledDiv = styled.div({
-  background: 'red',
-})
+  background: "white",
+});
 
 export default function Home() {
   return (
-    <StyledDiv>
-        home
-    </StyledDiv>
+    <>
+      <Header></Header>
+      <StyledDiv>home</StyledDiv>
+    </>
   );
 }

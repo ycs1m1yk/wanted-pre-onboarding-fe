@@ -77,7 +77,6 @@ export default function TodoList({
   const handleClick = (e: MouseEvent) => {
     const target = e.target as Element;
     const itemContainer = target.closest("div[data-item-id]") as HTMLDivElement;
-    console.log(itemContainer);
     const { itemId, itemTodo, itemIsCompleted } = itemContainer.dataset;
     const isCompletedBool =
       itemIsCompleted && itemIsCompleted === "true" ? true : false;
@@ -104,6 +103,7 @@ export default function TodoList({
         if (action === "editDone") {
           setSelectedId(-1);
           setIsEditMode(false);
+          setIsRefetchNeeded(true);
           setNewTodoInfo((curr) => ({
             ...curr,
             isCompleted: isCompletedBool,
@@ -125,10 +125,8 @@ export default function TodoList({
         <TodoItem
           key={id}
           itemId={id}
-          todo={id === selectedId ? newTodoInfo.todo : todo}
-          isCompleted={
-            id === selectedId ? newTodoInfo.isCompleted : isCompleted
-          }
+          todo={todo}
+          isCompleted={isCompleted}
           selectedId={selectedId}
           isEditMode={isEditMode}
           newTodoInfo={newTodoInfo}

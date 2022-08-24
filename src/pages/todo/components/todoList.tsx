@@ -88,7 +88,7 @@ export default function TodoList({
     ) {
       setNewTodoInfo((curr) => ({
         ...curr,
-        todo: itemTodo!,
+        todo: isCompletedBool ? itemTodo! : "완료!",
         isCompleted: !isCompletedBool,
       }));
       setIsRefetchNeeded(true);

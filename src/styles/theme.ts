@@ -2,13 +2,14 @@ import { DefaultTheme } from "styled-components";
 
 const theme: DefaultTheme = {
   palette: {
-    borderGray: "#DEE2E6",
-    gray: "#747474",
     black: "#151618",
-    wetasphalt: "#34495e",
+    gray: "#747474",
+    borderGray: "#DEE2E6",
+    disabledGray: "#cccccc",
+    wetAsphalt: "#34495e",
     emerald: "#2ecc71",
     pomegranate: "#c0392b",
-    peterriver: "#3498db",
+    peterRiver: "#3498db",
   },
 };
 

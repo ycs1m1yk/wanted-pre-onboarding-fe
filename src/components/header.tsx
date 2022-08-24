@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Logo from "./logo";
 
@@ -12,10 +11,10 @@ const StyledHeader = styled.header`
   flex-wrap: nowrap;
   height: 8rem;
   padding: 0 3rem;
-  border-bottom: 1px solid ${(props) => props.theme.palette.borderGray};
+  border-bottom: 1px solid ${({ theme }) => theme.palette.borderGray};
 
-  color: ${(props) => props.theme.palette.gray};
-  background-color: ${(props) => props.theme.palette.borderGray};
+  color: ${({ theme }) => theme.palette.borderGray};
+  background-color: ${({ theme }) => theme.palette.wetAsphalt};
   line-height: 1.5;
 `;
 
@@ -44,30 +43,21 @@ const StyledLink = styled(Link)`
   font-size: 1.8rem;
   white-space: nowrap;
   :hover {
-    color: white;
+    color: ${({ theme }) => theme.palette.pomegranate};
   }
 `;
 
 export default function Header() {
-  const [isHome, setIsHome] = useState<boolean>(true);
-  const { pathname } = useLocation();
-
-  useEffect(() => {
-    setIsHome(pathname === "/");
-  }, [pathname]);
-
   return (
     <StyledHeader>
       <HeaderContents>
         <Link to="/">
           <Logo />
         </Link>
-        {isHome && (
-          <StyledNav>
-            <StyledLink to="/signin">Sign in</StyledLink>
-            <StyledLink to="/signup">Sign up</StyledLink>
-          </StyledNav>
-        )}
+        <StyledNav>
+          <StyledLink to="/signin">Sign in</StyledLink>
+          <StyledLink to="/signup">Sign up</StyledLink>
+        </StyledNav>
       </HeaderContents>
     </StyledHeader>
   );

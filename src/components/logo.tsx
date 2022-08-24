@@ -1,9 +1,9 @@
-import styled from 'styled-components';
-import LogoImage from '../assets/images/logo.png';
+import styled from "styled-components";
+import LogoImage from "../assets/images/logo.png";
 
 const defaultProps = {
-  width: 115,
-  heigth: 35,
+  width: 120,
+  heigth: 50,
   src: LogoImage,
 };
 
@@ -19,9 +19,7 @@ const StyledLogo = styled.img<LogoProps>`
 `;
 
 export default function Logo({ width, heigth, src }: LogoProps) {
-  return (
-    <StyledLogo width={width} heigth={heigth} src={src} />
-  );
+  return <StyledLogo width={width} heigth={heigth} src={src} />;
 }
 
 Logo.defaultProps = defaultProps;

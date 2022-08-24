@@ -2,7 +2,7 @@
 
 ## 데모 영상
 
-데모 영상[링크](https://youtu.be/3yh_M2ZBkl8)입니다.
+데모 영상[링크](https://youtu.be/7a5Bzg5rGkk)입니다.
 
 ## Dependency
 
